@@ -1,0 +1,57 @@
+ul{
+  list-style-type: none;
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+#nav {
+  height: 8.5vh;
+  z-index: 100;
+}
+
+.usuario-dropdown{
+  z-index: 200;
+  overflow: hidden;
+  padding: 1vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  background-color: #fff;
+  color: #000;
+  box-shadow: rgba(0,0,0,0.3) 0px 0px 0px 200vmax;
+}
+
+.usuario{
+  display: flex;
+  gap: 1rem;
+}
+
+.usuario-li{
+  padding-right: 1rem;
+  display: flex;
+  align-items: left;
+}
+
+.info-usuario{
+  flex-direction: column;
+  display: flex;
+  text-align: left;
+  overflow: hidden;
+  font-size: 0.9rem;
+  justify-content: center;
+}
+
+.divisor{
+  transform: translate(-10%);
+  width: 150%;
+  height: 2px;
+  background-color: gray;
+  margin: .5rem 0 .5rem 0;
+  opacity: .2;
+}
+
+.mail-usuario{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}

@@ -1,0 +1,31 @@
+:root{
+  --nav-foot-height: 8.5vh;
+  --icon-size: 10vh;
+  --blanco: #ffffff;
+  --blanco-oscuro: #f1f1f1;
+  --gris: #b1b1b1;
+}
+
+.navbar {
+  padding: 0 var(--bs-navbar-padding-x);
+}
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: var(--bs-navbar-brand-font-size);
+  color: var(--bs-navbar-brand-color);
+  text-decoration: none;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+  background-color: #efae63;
+  min-height: 100vh;
+}
+
+.color-principal {
+  background-color: #f48809;
+}

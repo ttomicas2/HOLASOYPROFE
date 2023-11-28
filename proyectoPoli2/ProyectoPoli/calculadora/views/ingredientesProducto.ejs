@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>magic Party</title>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <span class="navbar__logo">
+            <a href="/ingredientes" class="navbar-brand" href="http://localhost:3000/">Magic Party</a>
+        </span>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a href="/ingredientes" class="nav-link" href="http://localhost:3000/">Ingredientes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/productos">Productos</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container mt-4">
+        <div class="row">
+            <form class="d-flex" action="/productos/buscar/<%= id %>" method="get">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchInput" name="buscador" placeholder="Buscar ingrediente">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <a href="/seleccionarIngredientes/<%= id %>" class="btn btn-primary w-100 mt-3"> selecionar ingredientes</a>
+        <div class="row mt-4">
+            <div style="max-height: 500px; overflow-y: scroll;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Ingrediente</th>
+                            <th class="text-end">Precio</th>
+                            <th class="text-end">Cantidad</th>
+                            <th>Unidad</th>
+                            <th class="text-end">Cantidad Receta</th>
+                            <th class="text-end">Importe Receta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% 
+                        if(tamaño > 0){
+                        result.forEach(function(rowData) { 
+                            %>
+                            <tr>
+                                <td><%= rowData[0].nombre %></td>
+                                <td class="text-end">$<%= rowData[0].costo %></td>
+                                <td class="text-end"><%= rowData[0].cantidad %></td>
+                                <td><%= rowData[0].unidad %></td>
+                                <td class="text-end"><%= rowData[1] %></td>
+                                <td class="text-end">$<%= rowData[0].CostoCantidad(rowData[1]).toFixed(2) %></td>
+                            </tr>
+                        <% });} %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.footer {
+  z-index: 99;
+  position: fixed;
+  bottom: 0;
+  height: var(--nav-foot-height);
+  width: 100%;
+}
+
+.footer-item {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  height: var(--nav-foot-height);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.heladera {
+  border-right: 1px solid white;
+}
+
+.setting {
+  border-left: 1px solid white;
+}
+
+.casa {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
